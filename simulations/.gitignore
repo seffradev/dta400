@@ -1,0 +1,11 @@
+/.metadata/
+Makefile
+.cproject
+.oppbuildspec
+.project
+.qtenvrc
+.settings/
+out/
+results/
+*dbg*
+tiktok/tiktok
