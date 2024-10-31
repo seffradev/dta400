@@ -34,6 +34,9 @@
 
 \section{Introduction}
 
+The terms ``simulated time'' and ``minutes'' will be used
+interchangeably throughout the paper.
+
 \section{Method}
 
 \subsection{The model}
@@ -53,7 +56,9 @@ and the service rate is, on average $placeholder$ minutes. If an
 actor faces difficulties using the service, an arbitrary extra 30
 seconds is added to the simulation time and the actor retries. The
 actor retries until either the level of satisfaction drops to $0$
-or until they have finished using the service.
+or until they have finished using the service. The actors utilize
+the service for a uniformly distributed simulated time in the range
+$[0, 160]$.
 
 \begin{figure}[!b]
     \centerline{
@@ -88,7 +93,7 @@ The following limitations provide possible ideas for further work.
     \item The queue requires active participation to remain in
         place and is not a ``sign-up and be notified'' type of
         queue that would allow simultaneous activity.
-    \item The queue is ``perpetual`` and people can come and go
+    \item The queue is ``perpetual'' and people can come and go
         as they like. A realistic situation would be a queue tied
         to working hours that could affect customer satisfaction
         from no longer accepting requests past a certain time.
