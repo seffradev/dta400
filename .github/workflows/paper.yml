@@ -1,0 +1,17 @@
+name: Generate PDF
+run-name: Generate PDF
+on: [push]
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      # install pdflatex and necessary extras
+      - run: sudo apt update
+      - run: sudo apt install inkscape texlive-latex-base texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-bibtex-extra biber texlive-lang-european texlive-publishers
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: pdflatex --shell-escape paper.tex && biber paper && pdflatex --shell-escape paper.tex
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.3.1
+        with:
+          path: paper.pdf
