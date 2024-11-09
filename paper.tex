@@ -99,20 +99,20 @@ face any difficulties using a service.
     \label{fig:queue-diagram}
 \end{figure}
 
-Actors join the queue with an arrival rate of $13$ actors per $60$
-minutes. If an actor faces difficulties using the service, an
-arbitrary extra 30 seconds is added to the simulation time and
-the actor retries. The actor retries until either the level of
-satisfaction drops to zero or until they have finished using the
-service. If an actor has been in the queue for at least ten
-minutes, they will lose one level of satisfaction and this repeats
-until they either enter a service or satisfaction reaches zero. The
-actors utilize the service for a uniformly distributed simulated
-time in the range $[0, 160]$ minutes. The following equation,
-(\ref{eq:service-rate}), gives the service rate where $\mu$ denotes
-the service rate and $c$, as above, denotes the number of services.
-$80$ is the average utilization time from the previously stated
-range. 
+Actors join the queue with differing arrival rates where
+$\lambda~\in~\{3,~13,~23\}$ actors per $60$ minutes. If an actor
+faces difficulties using the service, an arbitrary extra 30 seconds
+is added to the simulation time and the actor retries. The actor
+retries until either the level of satisfaction drops to zero or
+until they have finished using the service. If an actor has been
+in the queue for at least ten minutes, they will lose one level of
+satisfaction and this repeats until they either enter a service or
+satisfaction reaches zero. The actors utilize the service for a
+uniformly distributed simulated time in the range $[0, 160]$
+minutes. The following equation, (\ref{eq:service-rate}), gives
+the service rate where $\mu$ denotes the service rate and $c$, as
+above, denotes the number of services. $80$ is the average
+utilization time from the previously stated range. 
 
 \begin{equation}
     \mu(c) = \frac{c}{80}
@@ -237,8 +237,8 @@ time, leading to the spikes in the graph.
 Fig.~\ref{fig:satisfaction-3} and Fig.~\ref{fig:queue-time-3} only
 display the simulation when $\lambda = 3$. As $\lambda$ changes to
 the remaining two elements the results in
-Fig.~{fig:satisfaction-13}, Fig.~{fig:queue-time-13},
-Fig.~{fig:satisfaction-23} and Fig.~{fig:queue-time-23} are
+Fig.~\ref{fig:satisfaction-13}, Fig.~\ref{fig:queue-time-13},
+Fig.~\ref{fig:satisfaction-23} and Fig.~\ref{fig:queue-time-23} are
 procured that demonstrate a reduced satisfaction and increased
 queue time, especially when $\lambda = 23$. This is unexpected as
 more actors joining the system should affect the queue time, which,
